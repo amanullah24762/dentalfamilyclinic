@@ -5729,4 +5729,8 @@ footer .brand-logo {
   inset: 0;
 }
 
+.hero-image-credit, .image-caption, .patient-journey-art > small, .gallery-section .disclaimer, .comparison-disclaimer, .comparison-heading > p {
+  display: none;
+}
+
 /*# sourceMappingURL=family-dental-demo_app_globals_0kmqkq6iacy_j.css.map*/

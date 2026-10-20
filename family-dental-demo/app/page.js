@@ -39,7 +39,7 @@ function Icon({ name = 'tooth', className = '' }) {
 }
 
 function Brand() {
-  return <a className="brand" href="#home" aria-label="Family Dental Clinic home"><span className="brand-icon"><Icon /></span><span>family dental<span className="brand-sub">CLINIC · MIRPUR</span></span></a>;
+  return <a className="brand" href="#home" aria-label="Family Dental Clinic home"><img className="brand-logo" src="/images/family-dental-logo.svg" alt="" width="72" height="48" /><span>family dental<span className="brand-sub">CLINIC · MIRPUR</span></span></a>;
 }
 
 function Photo({ src, alt, className = '', priority = false }) {
@@ -47,6 +47,193 @@ function Photo({ src, alt, className = '', priority = false }) {
   return <div className={`photo ${className}`}>
     {failed ? <div className="photo-fallback"><Icon /><span>Care begins with a conversation.</span><small>Concept photograph unavailable</small></div> : <img src={src} alt={alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" onError={() => setFailed(true)} />}
   </div>;
+}
+
+function HeroParticleNetwork() {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext('2d');
+    const hero = canvas?.closest('.hero');
+    if (!canvas || !context || !hero) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let width = 0;
+    let height = 0;
+    let particles = [];
+    let frame = 0;
+    let lastTime = 0;
+    let visible = true;
+    let disposed = false;
+    const pointer = { x: 0, y: 0, active: false };
+
+    function draw(delta = 0) {
+      context.clearRect(0, 0, width, height);
+      const now = performance.now();
+      particles = particles.filter(particle => !particle.expiresAt || particle.expiresAt > now);
+      const distanceLimit = width < 600 ? 150 : width <= 1100 ? 195 : 190;
+      for (const particle of particles) {
+        particle.x += particle.vx * delta;
+        particle.y += particle.vy * delta;
+        // Re-enter outside the visible frame so the network never hits a wall.
+        if (particle.x < -distanceLimit) particle.x = width + distanceLimit;
+        if (particle.x > width + distanceLimit) particle.x = -distanceLimit;
+        if (particle.y < -distanceLimit) particle.y = height + distanceLimit;
+        if (particle.y > height + distanceLimit) particle.y = -distanceLimit;
+      }
+      context.lineWidth = .7;
+      for (let i = 0; i < particles.length; i++) {
+        const first = particles[i];
+        for (let j = i + 1; j < particles.length; j++) {
+          const second = particles[j];
+          const dx = first.x - second.x;
+          const dy = first.y - second.y;
+          const squared = dx * dx + dy * dy;
+          if (squared >= distanceLimit * distanceLimit) continue;
+          const proximity = 1 - Math.sqrt(squared) / distanceLimit;
+          context.strokeStyle = `rgba(255,255,255,${proximity * .34})`;
+          context.beginPath();
+          context.moveTo(first.x, first.y);
+          context.lineTo(second.x, second.y);
+          context.stroke();
+        }
+        if (pointer.active && !reducedMotion.matches) {
+          const distance = Math.hypot(first.x - pointer.x, first.y - pointer.y);
+          if (distance < 155) {
+            context.strokeStyle = `rgba(255,255,255,${(1 - distance / 155) * .32})`;
+            context.beginPath();
+            context.moveTo(first.x, first.y);
+            context.lineTo(pointer.x, pointer.y);
+            context.stroke();
+          }
+        }
+        context.fillStyle = `rgba(255,255,255,${first.opacity})`;
+        context.beginPath();
+        context.arc(first.x, first.y, first.radius, 0, Math.PI * 2);
+        context.fill();
+      }
+    }
+
+    function tick(time) {
+      frame = 0;
+      if (disposed || !visible || document.hidden || reducedMotion.matches) return;
+      const delta = lastTime ? Math.min((time - lastTime) / 1000, .05) : 0;
+      lastTime = time;
+      draw(delta);
+      frame = requestAnimationFrame(tick);
+    }
+
+    function syncAnimation() {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      lastTime = 0;
+      if (disposed) return;
+      draw();
+      if (visible && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(tick);
+    }
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const previousWidth = width;
+      const previousHeight = height;
+      width = rect.width;
+      height = rect.height;
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      const minimumCount = width >= 600 && width <= 1100 ? 85 : 50;
+      const count = Math.min(175, Math.max(minimumCount, Math.round(width * height / 8500)));
+      if (previousWidth && previousHeight) {
+        for (const particle of particles) {
+          particle.x *= width / previousWidth;
+          particle.y *= height / previousHeight;
+        }
+      }
+      particles = particles.slice(0, count);
+      while (particles.length < count) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 24 + Math.random() * 36;
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          radius: .7 + Math.random() * 2.1,
+          opacity: .25 + Math.random() * .25,
+        });
+      }
+      syncAnimation();
+    }
+
+    function movePointer(event) {
+      if (event.pointerType === 'touch' || reducedMotion.matches) return;
+      const rect = canvas.getBoundingClientRect();
+      pointer.x = event.clientX - rect.left;
+      pointer.y = event.clientY - rect.top;
+      pointer.active = true;
+    }
+    function clearPointer() { pointer.active = false; }
+    function addNetwork(event) {
+      if (event.target.closest('a, button, input, select, textarea, summary, [role="button"]')) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      if (x < 0 || y < 0 || x > width || y > height) return;
+      // Every click creates a fresh connected cluster. Older click-created
+      // particles retire gradually to keep repeated interactions responsive.
+      const expiresAt = performance.now() + 45000;
+      for (let index = 0; index < 2; index++) {
+        const angle = Math.random() * Math.PI * 2;
+        const spread = Math.random() * 55;
+        const direction = Math.random() * Math.PI * 2;
+        const speed = 24 + Math.random() * 36;
+        particles.push({
+          x: Math.max(0, Math.min(width, x + Math.cos(angle) * spread)),
+          y: Math.max(0, Math.min(height, y + Math.sin(angle) * spread)),
+          vx: Math.cos(direction) * speed,
+          vy: Math.sin(direction) * speed,
+          radius: 1 + Math.random() * 2,
+          opacity: .25 + Math.random() * .25,
+          expiresAt,
+        });
+      }
+      const overflow = particles.length - 350;
+      if (overflow > 0) {
+        let removed = 0;
+        particles = particles.filter(particle => {
+          if (particle.expiresAt && removed < overflow) { removed++; return false; }
+          return true;
+        });
+      }
+      draw();
+    }
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(canvas);
+    const visibilityObserver = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      syncAnimation();
+    });
+    visibilityObserver.observe(hero);
+    hero.addEventListener('pointermove', movePointer, { passive: true });
+    hero.addEventListener('pointerleave', clearPointer);
+    hero.addEventListener('click', addNetwork);
+    document.addEventListener('visibilitychange', syncAnimation);
+    reducedMotion.addEventListener('change', syncAnimation);
+    resize();
+    return () => {
+      disposed = true;
+      cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+      visibilityObserver.disconnect();
+      hero.removeEventListener('pointermove', movePointer);
+      hero.removeEventListener('pointerleave', clearPointer);
+      hero.removeEventListener('click', addNetwork);
+      document.removeEventListener('visibilitychange', syncAnimation);
+      reducedMotion.removeEventListener('change', syncAnimation);
+    };
+  }, []);
+  return <canvas ref={canvasRef} className="hero-particle-canvas" aria-hidden="true" />;
 }
 
 function TreatmentCard({ title, description, icon, onInquire }) {
@@ -74,6 +261,22 @@ function TreatmentCard({ title, description, icon, onInquire }) {
       <button type="button" className="service-read-more" onClick={() => onInquire(title)}>Read more <span><Icon name="arrow" /></span></button>
     </div>
   </article>;
+}
+
+function SmileComparison() {
+  const [position, setPosition] = useState(50);
+  const [unavailable, setUnavailable] = useState(false);
+  return <div className="smile-comparison-block">
+    <div className="comparison-heading"><div><p className="eyebrow">Explore the difference</p><h3>A brighter perspective.</h3></div><p>Move the slider to compare the reference images.</p></div>
+    {unavailable ? <div className="comparison-unavailable"><Icon name="spark" /><p>The comparison images are currently unavailable.</p><a href={PHONE} className="text-link">Ask the clinic about smile options <Icon name="arrow" /></a></div> : <div className="smile-comparison" style={{ '--comparison-position': `${position}%` }}>
+      <img className="comparison-image" src="https://alqarndentalconsultants.pk/wp-content/uploads/2021/03/after.jpg" alt="Illustrative teeth-whitening reference, after view" loading="lazy" onError={() => setUnavailable(true)} />
+      <div className="comparison-before"><img className="comparison-image" src="https://alqarndentalconsultants.pk/wp-content/uploads/2021/03/Before.jpg" alt="Illustrative teeth-whitening reference, before view" loading="lazy" onError={() => setUnavailable(true)} /></div>
+      <span className="comparison-label comparison-label-before">Before</span><span className="comparison-label comparison-label-after">After</span>
+      <div className="comparison-divider" aria-hidden="true"><span>‹ <span>›</span></span></div>
+      <input className="comparison-range" type="range" min="0" max="100" value={position} onChange={event => setPosition(Number(event.target.value))} aria-label="Before and after image comparison" aria-valuetext={`${position}% before image visible`} />
+    </div>}
+    <p className="comparison-disclaimer">Illustrative reference images from <a href="https://alqarndentalconsultants.pk/" target="_blank" rel="noreferrer">Al-Qaran Dental Consultants</a>, not Family Dental Clinic patient results. Individual outcomes vary; discuss suitability with your dentist.</p>
+  </div>;
 }
 
 function CareShowcase() {
@@ -119,17 +322,39 @@ export default function Home() {
     </header>
     <main id="main">
       <section id="home" className="hero">
-        <Photo src={photos.hero} alt="AI illustration of a Pakistani dentist consulting with a patient" className="hero-background" priority />
-        <div className="container hero-inner"><div className="hero-copy"><p className="eyebrow">A healthy smile starts here</p><h1>A little care.<br />A brighter<br /><em>smile.</em></h1><p className="intro">Dental care for every generation. Start your journey to a confident smile with Family Dental Clinic, Mirpur.</p><button className="button" onClick={() => inquire()}>Book an Appointment <Icon name="arrow" /></button><a className="hero-phone" href={PHONE}><Icon name="phone" /> +92 320 3771995</a></div><div className="hero-note"><span>FAMILY DENTAL CLINIC</span><strong>Healthy smiles.<br />Happy families.</strong><a href="#treatments">Discover our care <Icon name="arrow" /></a></div></div>
-        <div className="hero-editorial"><span className="hero-editorial-line" /><span>PERSONAL CARE.<br />CONFIDENT SMILES.</span><a href="#treatments" aria-label="Explore dental treatments">↓</a></div>
-        <span className="hero-image-credit">AI-generated concept image</span>
+        <Photo src="https://alqarndentalconsultants.pk/wp-content/uploads/2021/05/Image-new.jpg" alt="Smiling woman during a dental visit, from the reference website" className="hero-background" priority />
+        <HeroParticleNetwork />
+        <div className="container hero-inner">
+          <div className="hero-copy hero-reference-card">
+            <p className="eyebrow">Family Dental Clinic · Mirpur</p>
+            <h1>A little care.<br /><em>A brighter smile.</em></h1>
+            <div className="hero-care-columns"><div><span className="hero-care-icon"><Icon name="heart" /></span><h2>For your family</h2><p>A welcoming first step for every generation. Share your questions and plan your next dental visit.</p></div><div><span className="hero-care-icon"><Icon name="chat" /></span><h2>Care starts here</h2><p>Talk about your smile, explore available treatment options, and understand what comes next.</p></div></div>
+            <button className="button" onClick={() => inquire()}>Book an Appointment <Icon name="arrow" /></button>
+            <div className="hero-smile-badge"><strong>Smile</strong><span>A little brighter.</span></div>
+          </div>
+          <div className="hero-visit-strip"><span className="hero-strip-icon"><Icon name="tooth" /></span><p><span>LET’S PLAN YOUR VISIT</span> Your next smile starts with a conversation.</p><a href={PHONE}><Icon name="phone" /> +92 320 3771995 <Icon name="arrow" /></a></div>
+        </div>
       </section>
       <div className="smile-ribbon" aria-hidden="true"><div>{[0, 1, 2, 3].map(item => <span key={item}>YOUR SMILE, OUR STARTING POINT <span className="ribbon-star">✳</span> CARE FOR EVERY GENERATION <span className="ribbon-star">✳</span> MIRPUR, AJK <span className="ribbon-star">✳</span></span>)}</div></div>
       <CareShowcase />
       <section className="trust-band" aria-label="Our care concept"><div className="container trust-grid">{[['heart', 'For the whole family', 'Every age. Every kind of smile.'], ['spark', 'A welcoming setting', 'A fresh, thoughtful care concept.'], ['chat', 'Clarity at every step', 'Questions deserve clear answers.'], ['leaf', 'Your comfort matters', 'A little reassurance goes a long way.']].map(([icon, title, text]) => <div className="trust-item" key={title}><Icon name={icon} /><div><h3>{title}</h3><p>{text}</p></div></div>)}</div></section>
       <section id="treatments" className="section container" data-reveal><div className="section-heading"><div><p className="eyebrow">Our services</p><h2>A wide range of<br /><em>dental care.</em></h2></div><div className="section-aside"><p>From everyday questions to your next steps, explore a more considered approach to dental care.</p><p className="disclaimer">Illustrative treatment categories. Please contact the clinic to confirm availability and suitability.</p></div></div><div className="treatment-grid">{treatments.map(([title, description, icon]) => <TreatmentCard key={title} title={title} description={description} icon={icon} onInquire={inquire} />)}</div></section>
       <section id="about" className="about-section"><div className="container about-grid" data-reveal><div className="about-art"><Photo src={photos.room} alt="AI illustration of a Pakistani dentist welcoming a mother and daughter" className="about-photo" /><div className="about-stamp"><Icon name="tooth" /><span>Thoughtful care.<br /><em>Human connection.</em></span></div><p className="image-caption">AI-GENERATED CLINIC CONCEPT</p></div><div className="about-copy"><p className="eyebrow">The heart of the experience</p><h2>A familiar place.<br /><em>A friendly welcome.</em></h2><p className="large-copy">A dental visit should begin with a conversation, not a feeling of uncertainty.</p><p>Explore dental care for your family in Mirpur. Contact the clinic to discuss your concerns, ask about treatment options, and plan your next visit.</p><div className="about-points"><span><Icon name="heart" /> A thoughtful welcome for adults and children</span><span><Icon name="chat" /> Clear conversations about your dental needs</span></div><a className="text-link" href="#patient-care">Discover the patient experience <span>↗</span></a></div></div></section>
-      <section id="patient-care" className="section container" data-reveal><div className="center-heading"><p className="eyebrow">Simple steps. A thoughtful experience.</p><h2>Feel at ease.<br /><em>From the very first hello.</em></h2></div><div className="steps">{[['Request Your Visit', 'Get in touch with the clinic to discuss a suitable time for your visit.'], ['Discuss Your Dental Needs', 'Share your questions, concerns, and what you would like help with.'], ['Explore Your Treatment Options', 'Discuss possible next steps and make space for an informed conversation.']].map(([title, text], i) => <article key={title}><div className="step-number">0{i + 1}<span /></div><h3>{title}</h3><p>{text}</p></article>)}</div><p className="steps-note">This is a website concept. Appointment inquiries here are illustrative and are not connected to a live booking system.</p></section>
+      <section id="patient-care" className="patient-journey">
+        <div className="container patient-journey-grid">
+          <div className="patient-journey-copy" data-reveal><p className="eyebrow section-pill">Your care, step by step</p><h2>Let’s take care of<br /><em>your dental concerns.</em></h2><ol className="journey-list"><li><span>01</span><p>Explore the dental care categories and choose what you’d like to discuss.</p></li><li><span>02</span><p>Call the clinic to ask your questions and arrange a suitable appointment.</p></li><li><span>03</span><p>Meet your dentist, discuss an assessment, and understand your next steps.</p></li></ol><button className="button journey-cta" onClick={() => inquire()}>Arrange your visit <Icon name="arrow" /></button></div>
+          <div className="patient-journey-art" data-reveal><span className="journey-ring journey-ring-one" aria-hidden="true" /><span className="journey-ring journey-ring-two" aria-hidden="true" /><Photo src={photos.care} alt="AI-generated scene of a Pakistani dentist discussing care with a patient" className="journey-portrait" /><div className="journey-photo-note"><Icon name="heart" /><span>Good conversations.<br /><strong>Confident next steps.</strong></span></div><small>AI-generated concept imagery</small></div>
+        </div>
+      </section>
+      <section className="care-sequence" aria-labelledby="sequence-heading"><div className="container">
+        <div className="sequence-heading" data-reveal><p className="eyebrow section-pill">The sequence</p><h2 id="sequence-heading">Your journey to a healthier smile.</h2><span className="sequence-heading-mark" aria-hidden="true"><Icon name="tooth" /></span></div>
+        <div className="sequence-grid">{[
+          ['Initial consultation', 'Share your concerns and dental history. Ask the clinic about an assessment and the care options available to you.', 'Dental Consultation'],
+          ['Your treatment plan', 'Discuss the recommended options, appointment arrangements, and costs with your dentist before deciding how to proceed.', 'Treatment Planning'],
+          ['Care beyond your visit', 'Ask about aftercare, follow-up appointments, and the everyday habits that can help you look after your smile.', 'Follow-up Care'],
+        ].map(([title, text, topic], index) => <article className="sequence-card" key={title} data-reveal><div className="sequence-number-row"><span className="sequence-number"><span>0{index + 1}</span></span><span className="sequence-connector" aria-hidden="true" /></div><h3>{title}</h3><p>{text}</p><button className="sequence-read-more" onClick={() => inquire(topic)}>Read more <span><Icon name="arrow" /></span></button></article>)}</div>
+        <SmileComparison />
+      </div></section>
       <section className="gallery-section"><div className="container" data-reveal><div className="section-heading"><div><p className="eyebrow">A glimpse of the feeling</p><h2>More comfort.<br /><em>More reasons to smile.</em></h2></div><p className="section-aside">Light-filled spaces. Attentive conversations. A visual direction built around feeling welcome.</p></div><div className="gallery"><figure><Photo src={photos.room} alt="AI illustration of a Pakistani family arriving at a dental clinic" /><figcaption><span>01</span> A welcoming space</figcaption></figure><figure><Photo src={photos.care} alt="AI illustration of a Pakistani dentist explaining a dental model" /><figcaption><span>02</span> Care in the details</figcaption></figure><figure><Photo src={photos.visit} alt="AI illustration of a Pakistani father and son in a clinic waiting area" /><figcaption><span>03</span> Time for your smile</figcaption></figure></div><p className="disclaimer">AI-generated imagery showing Pakistani dental care and family scenes. These are illustrative concepts, not photographs of the clinic, its staff, or patients.</p></div></section>
       <section id="faq" className="section container faq-section" data-reveal><div><p className="eyebrow">A little clarity</p><h2>Questions?<br /><em>Let’s talk.</em></h2><p>Getting ready for your visit should feel simple. Here is where to start.</p><button className="button" onClick={() => inquire()}>Ask the clinic <Icon name="chat" /></button></div><div className="faq-list">{[
         ['How do I arrange an appointment?', 'Call +92 320 3771995 to discuss a suitable date and time. Your appointment is confirmed directly by the clinic.'],

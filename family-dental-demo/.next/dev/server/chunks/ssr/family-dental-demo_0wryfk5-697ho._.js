@@ -17,6 +17,9 @@ const metadata = {
     robots: {
         index: false,
         follow: false
+    },
+    icons: {
+        icon: '/images/family-dental-logo.svg'
     }
 };
 function RootLayout({ children }) {
@@ -26,12 +29,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/family-dental-demo/app/layout.js",
-            lineNumber: 10,
+            lineNumber: 11,
             columnNumber: 26
         }, this)
     }, void 0, false, {
         fileName: "[project]/family-dental-demo/app/layout.js",
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 10
     }, this);
 }

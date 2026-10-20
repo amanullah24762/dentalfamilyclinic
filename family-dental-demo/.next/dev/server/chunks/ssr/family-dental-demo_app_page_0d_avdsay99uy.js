@@ -58,10 +58,10 @@ const treatments = [
     ]
 ];
 const photos = {
-    hero: 'https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    room: 'https://images.pexels.com/photos/3845653/pexels-photo-3845653.jpeg?auto=compress&cs=tinysrgb&w=1000',
-    care: 'https://images.pexels.com/photos/3845706/pexels-photo-3845706.jpeg?auto=compress&cs=tinysrgb&w=900',
-    visit: 'https://images.pexels.com/photos/3845729/pexels-photo-3845729.jpeg?auto=compress&cs=tinysrgb&w=900'
+    hero: '/images/pakistani-hero.webp',
+    room: '/images/pakistani-room.webp',
+    care: '/images/pakistani-care.webp',
+    visit: '/images/pakistani-visit.webp'
 };
 function Icon({ name = 'tooth', className = '' }) {
     const paths = {
@@ -364,6 +364,10 @@ function Home() {
             'patient-care'
         ],
         [
+            'FAQs',
+            'faq'
+        ],
+        [
             'Contact',
             'contact'
         ]
@@ -559,265 +563,169 @@ function Home() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         id: "home",
-                        className: "hero container",
+                        className: "hero",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "hero-copy",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "eyebrow",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dot"
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 59
-                                            }, this),
-                                            " Family dental care in Mirpur"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 77,
-                                        columnNumber: 36
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        children: [
-                                            "Healthy Smiles.",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 135
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                                children: "Happier"
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 141
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 157
-                                            }, this),
-                                            "Families",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "mint-period",
-                                                children: "."
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 171
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 77,
-                                        columnNumber: 116
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "intro",
-                                        children: "A welcoming place for every generation. Thoughtful dental care starts with feeling heard, understood, and at ease."
-                                    }, void 0, false, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 77,
-                                        columnNumber: 214
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "hero-actions",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                className: "button",
-                                                onClick: ()=>inquire(),
-                                                children: [
-                                                    "Request an Appointment ",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                                                        name: "arrow"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 77,
-                                                        columnNumber: 459
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 383
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                className: "text-link",
-                                                href: "#treatments",
-                                                children: [
-                                                    "Explore Our Treatments ",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        children: "↗"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 77,
-                                                        columnNumber: 556
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 489
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 77,
-                                        columnNumber: 353
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        className: "location-link",
-                                        href: MAP,
-                                        target: "_blank",
-                                        rel: "noreferrer",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                                                name: "pin"
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 653
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Allama Iqbal Road, Mirpur, AJK"
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 672
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "↗"
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 77,
-                                                columnNumber: 715
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 77,
-                                        columnNumber: 580
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Photo, {
+                                src: photos.hero,
+                                alt: "AI illustration of a Pakistani dentist consulting with a patient",
+                                className: "hero-background",
+                                priority: true
+                            }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
                                 lineNumber: 77,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "hero-art",
+                                className: "container hero-inner",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "orbit",
-                                        "aria-hidden": "true"
-                                    }, void 0, false, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 78,
-                                        columnNumber: 35
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Photo, {
-                                        src: photos.hero,
-                                        alt: "Stock concept of a dentist caring for a patient",
-                                        className: "hero-photo",
-                                        priority: true
-                                    }, void 0, false, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 78,
-                                        columnNumber: 79
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "image-tag",
+                                        className: "hero-copy",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "tiny-star",
-                                                children: "✳"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "eyebrow",
+                                                children: "A healthy smile starts here"
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
                                                 lineNumber: 78,
-                                                columnNumber: 219
+                                                columnNumber: 74
                                             }, this),
-                                            " A comfortable start",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 78,
-                                                columnNumber: 275
-                                            }, this),
-                                            "to a healthier smile."
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 78,
-                                        columnNumber: 192
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "care-badge",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "badge-icon",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                                                    name: "heart"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 78,
-                                                    columnNumber: 365
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 78,
-                                                columnNumber: 336
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                                 children: [
-                                                    "Little smiles.",
+                                                    "A little care.",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
                                                         lineNumber: 78,
-                                                        columnNumber: 412
+                                                        columnNumber: 146
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                        children: "Lifelong care."
+                                                    "A brighter",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                                        lineNumber: 78,
+                                                        columnNumber: 162
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
+                                                        children: "smile."
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
                                                         lineNumber: 78,
-                                                        columnNumber: 418
+                                                        columnNumber: 168
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
                                                 lineNumber: 78,
-                                                columnNumber: 393
+                                                columnNumber: 128
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "intro",
+                                                children: "Dental care for every generation. Start your journey to a confident smile with Family Dental Clinic, Mirpur."
+                                            }, void 0, false, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 78,
+                                                columnNumber: 188
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: "button",
+                                                onClick: ()=>inquire(),
+                                                children: [
+                                                    "Book an Appointment ",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                        name: "arrow"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                                        lineNumber: 78,
+                                                        columnNumber: 394
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 78,
+                                                columnNumber: 321
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                className: "hero-phone",
+                                                href: PHONE,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                        name: "phone"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                                        lineNumber: 78,
+                                                        columnNumber: 463
+                                                    }, this),
+                                                    " +92 320 3771995"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 78,
+                                                columnNumber: 424
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
                                         lineNumber: 78,
-                                        columnNumber: 308
+                                        columnNumber: 47
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "image-caption",
-                                        children: "VISUAL CONCEPT · STOCK PHOTOGRAPHY"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "hero-note",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "FAMILY DENTAL CLINIC"
+                                            }, void 0, false, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 78,
+                                                columnNumber: 537
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                children: [
+                                                    "Healthy smiles.",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                                        lineNumber: 78,
+                                                        columnNumber: 593
+                                                    }, this),
+                                                    "Happy families."
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 78,
+                                                columnNumber: 570
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "#treatments",
+                                                children: [
+                                                    "Discover our care ",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                        name: "arrow"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                                        lineNumber: 78,
+                                                        columnNumber: 663
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 78,
+                                                columnNumber: 623
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
                                         lineNumber: 78,
-                                        columnNumber: 461
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "vertical-note",
-                                        "aria-hidden": "true",
-                                        children: "CARE THAT FEELS PERSONAL"
-                                    }, void 0, false, {
-                                        fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 78,
-                                        columnNumber: 528
+                                        columnNumber: 510
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
                                 lineNumber: 78,
+                                columnNumber: 9
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "hero-image-credit",
+                                children: "AI-generated concept image"
+                            }, void 0, false, {
+                                fileName: "[project]/family-dental-demo/app/page.js",
+                                lineNumber: 79,
                                 columnNumber: 9
                             }, this)
                         ]
@@ -859,7 +767,7 @@ function Home() {
                                             name: icon
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 80,
+                                            lineNumber: 81,
                                             columnNumber: 465
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -868,36 +776,36 @@ function Home() {
                                                     children: title
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 80,
+                                                    lineNumber: 81,
                                                     columnNumber: 490
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: text
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 80,
+                                                    lineNumber: 81,
                                                     columnNumber: 506
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 80,
+                                            lineNumber: 81,
                                             columnNumber: 485
                                         }, this)
                                     ]
                                 }, title, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 80,
+                                    lineNumber: 81,
                                     columnNumber: 425
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 80,
+                            lineNumber: 81,
                             columnNumber: 69
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 80,
+                        lineNumber: 81,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -912,37 +820,37 @@ function Home() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "eyebrow",
-                                                children: "A little attention. A lasting difference."
+                                                children: "Our services"
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
+                                                lineNumber: 82,
                                                 columnNumber: 112
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 children: [
-                                                    "Care for every",
+                                                    "A wide range of",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 81,
-                                                        columnNumber: 198
+                                                        lineNumber: 82,
+                                                        columnNumber: 170
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                                        children: "kind of smile."
+                                                        children: "dental care."
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 81,
-                                                        columnNumber: 204
+                                                        lineNumber: 82,
+                                                        columnNumber: 176
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 180
+                                                lineNumber: 82,
+                                                columnNumber: 151
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 81,
+                                        lineNumber: 82,
                                         columnNumber: 107
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -952,27 +860,27 @@ function Home() {
                                                 children: "From everyday questions to your next steps, explore a more considered approach to dental care."
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 269
+                                                lineNumber: 82,
+                                                columnNumber: 239
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "disclaimer",
                                                 children: "Illustrative treatment categories. Please contact the clinic to confirm availability and suitability."
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 370
+                                                lineNumber: 82,
+                                                columnNumber: 340
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 81,
-                                        columnNumber: 238
+                                        lineNumber: 82,
+                                        columnNumber: 208
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 81,
+                                lineNumber: 82,
                                 columnNumber: 74
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -989,13 +897,13 @@ function Home() {
                                                             name: icon
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 81,
-                                                            columnNumber: 703
+                                                            lineNumber: 82,
+                                                            columnNumber: 673
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 81,
-                                                        columnNumber: 670
+                                                        lineNumber: 82,
+                                                        columnNumber: 640
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "index",
@@ -1005,28 +913,28 @@ function Home() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 81,
-                                                        columnNumber: 730
+                                                        lineNumber: 82,
+                                                        columnNumber: 700
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 639
+                                                lineNumber: 82,
+                                                columnNumber: 609
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 children: title
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 775
+                                                lineNumber: 82,
+                                                columnNumber: 745
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: description
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 791
+                                                lineNumber: 82,
+                                                columnNumber: 761
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 className: "card-link",
@@ -1038,30 +946,30 @@ function Home() {
                                                         name: "arrow"
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 81,
-                                                        columnNumber: 931
+                                                        lineNumber: 82,
+                                                        columnNumber: 901
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 81,
-                                                columnNumber: 811
+                                                lineNumber: 82,
+                                                columnNumber: 781
                                             }, this)
                                         ]
                                     }, title, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 81,
-                                        columnNumber: 596
+                                        lineNumber: 82,
+                                        columnNumber: 566
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 81,
-                                columnNumber: 513
+                                lineNumber: 82,
+                                columnNumber: 483
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 81,
+                        lineNumber: 82,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1076,11 +984,11 @@ function Home() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Photo, {
                                             src: photos.room,
-                                            alt: "Stock concept of a bright dental practice",
+                                            alt: "AI illustration of a Pakistani dentist welcoming a mother and daughter",
                                             className: "about-photo"
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
+                                            lineNumber: 83,
                                             columnNumber: 130
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1090,48 +998,48 @@ function Home() {
                                                     name: "tooth"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 258
+                                                    lineNumber: 83,
+                                                    columnNumber: 287
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: [
                                                         "Thoughtful care.",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 82,
-                                                            columnNumber: 301
+                                                            lineNumber: 83,
+                                                            columnNumber: 330
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                             children: "Human connection."
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 82,
-                                                            columnNumber: 307
+                                                            lineNumber: 83,
+                                                            columnNumber: 336
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 279
+                                                    lineNumber: 83,
+                                                    columnNumber: 308
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 229
+                                            lineNumber: 83,
+                                            columnNumber: 258
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "image-caption",
-                                            children: "PRACTICE IMAGERY FOR CONCEPT PURPOSES"
+                                            children: "AI-GENERATED CLINIC CONCEPT"
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 346
+                                            lineNumber: 83,
+                                            columnNumber: 375
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 82,
+                                    lineNumber: 83,
                                     columnNumber: 103
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1142,45 +1050,44 @@ function Home() {
                                             children: "The heart of the experience"
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 450
+                                            lineNumber: 83,
+                                            columnNumber: 469
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             children: [
-                                                "Care That Puts",
+                                                "A familiar place.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 522
+                                                    lineNumber: 83,
+                                                    columnNumber: 544
                                                 }, this),
-                                                "Your ",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                                    children: "Family First."
+                                                    children: "A friendly welcome."
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 533
+                                                    lineNumber: 83,
+                                                    columnNumber: 550
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 504
+                                            lineNumber: 83,
+                                            columnNumber: 523
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "large-copy",
                                             children: "A dental visit should begin with a conversation, not a feeling of uncertainty."
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 560
+                                            lineNumber: 83,
+                                            columnNumber: 583
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: "Our proposed care philosophy puts respectful communication, patient comfort, and family needs at the centre of the experience. There is room to ask questions, share concerns, and understand what comes next."
+                                            children: "Explore dental care for your family in Mirpur. Contact the clinic to discuss your concerns, ask about treatment options, and plan your next visit."
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 668
+                                            lineNumber: 83,
+                                            columnNumber: 691
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "about-points",
@@ -1191,15 +1098,15 @@ function Home() {
                                                             name: "heart"
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 82,
-                                                            columnNumber: 917
+                                                            lineNumber: 83,
+                                                            columnNumber: 880
                                                         }, this),
                                                         " A thoughtful welcome for adults and children"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 911
+                                                    lineNumber: 83,
+                                                    columnNumber: 874
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: [
@@ -1207,21 +1114,21 @@ function Home() {
                                                             name: "chat"
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 82,
-                                                            columnNumber: 996
+                                                            lineNumber: 83,
+                                                            columnNumber: 959
                                                         }, this),
                                                         " Clear conversations about your dental needs"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 990
+                                                    lineNumber: 83,
+                                                    columnNumber: 953
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 881
+                                            lineNumber: 83,
+                                            columnNumber: 844
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                             className: "text-link",
@@ -1232,38 +1139,30 @@ function Home() {
                                                     children: "↗"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 82,
-                                                    columnNumber: 1151
+                                                    lineNumber: 83,
+                                                    columnNumber: 1114
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 1073
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "disclaimer",
-                                            children: "Demo editorial copy — the clinic’s own story and care philosophy can be added after review."
-                                        }, void 0, false, {
-                                            fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 82,
-                                            columnNumber: 1169
+                                            lineNumber: 83,
+                                            columnNumber: 1036
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 82,
-                                    columnNumber: 422
+                                    lineNumber: 83,
+                                    columnNumber: 441
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 82,
+                            lineNumber: 83,
                             columnNumber: 53
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 82,
+                        lineNumber: 83,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1279,7 +1178,7 @@ function Home() {
                                         children: "Simple steps. A thoughtful experience."
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 83,
+                                        lineNumber: 84,
                                         columnNumber: 108
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1287,26 +1186,26 @@ function Home() {
                                             "Feel at ease.",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 190
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                 children: "From the very first hello."
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 196
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 83,
+                                        lineNumber: 84,
                                         columnNumber: 173
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 83,
+                                lineNumber: 84,
                                 columnNumber: 76
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1333,38 +1232,38 @@ function Home() {
                                                     i + 1,
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 83,
+                                                        lineNumber: 84,
                                                         columnNumber: 663
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 626
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 children: title
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 677
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: text
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 693
                                             }, this)
                                         ]
                                     }, title, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 83,
+                                        lineNumber: 84,
                                         columnNumber: 605
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 83,
+                                lineNumber: 84,
                                 columnNumber: 242
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1372,13 +1271,13 @@ function Home() {
                                 children: "This is a website concept. Appointment inquiries here are illustrative and are not connected to a live booking system."
                             }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 83,
+                                lineNumber: 84,
                                 columnNumber: 724
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 83,
+                        lineNumber: 84,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1397,7 +1296,7 @@ function Home() {
                                                     children: "A glimpse of the feeling"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
+                                                    lineNumber: 85,
                                                     columnNumber: 121
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1405,26 +1304,26 @@ function Home() {
                                                         "More comfort.",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 84,
+                                                            lineNumber: 85,
                                                             columnNumber: 189
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                             children: "More reasons to smile."
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 84,
+                                                            lineNumber: 85,
                                                             columnNumber: 195
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
+                                                    lineNumber: 85,
                                                     columnNumber: 172
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 84,
+                                            lineNumber: 85,
                                             columnNumber: 116
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1432,13 +1331,13 @@ function Home() {
                                             children: "Light-filled spaces. Attentive conversations. A visual direction built around feeling welcome."
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 84,
+                                            lineNumber: 85,
                                             columnNumber: 237
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 84,
+                                    lineNumber: 85,
                                     columnNumber: 83
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1448,10 +1347,10 @@ function Home() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Photo, {
                                                     src: photos.room,
-                                                    alt: "Stock dental interior used as a design reference"
+                                                    alt: "AI illustration of a Pakistani family arriving at a dental clinic"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
+                                                    lineNumber: 85,
                                                     columnNumber: 403
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
@@ -1460,31 +1359,31 @@ function Home() {
                                                             children: "01"
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 84,
-                                                            columnNumber: 497
+                                                            lineNumber: 85,
+                                                            columnNumber: 514
                                                         }, this),
                                                         " A welcoming space"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
-                                                    columnNumber: 485
+                                                    lineNumber: 85,
+                                                    columnNumber: 502
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 84,
+                                            lineNumber: 85,
                                             columnNumber: 395
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Photo, {
                                                     src: photos.care,
-                                                    alt: "Stock dental care scene used as a design reference"
+                                                    alt: "AI illustration of a Pakistani dentist explaining a dental model"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
-                                                    columnNumber: 560
+                                                    lineNumber: 85,
+                                                    columnNumber: 577
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
                                                     children: [
@@ -1492,31 +1391,31 @@ function Home() {
                                                             children: "02"
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 84,
-                                                            columnNumber: 656
+                                                            lineNumber: 85,
+                                                            columnNumber: 687
                                                         }, this),
                                                         " Care in the details"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
-                                                    columnNumber: 644
+                                                    lineNumber: 85,
+                                                    columnNumber: 675
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 84,
-                                            columnNumber: 552
+                                            lineNumber: 85,
+                                            columnNumber: 569
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Photo, {
                                                     src: photos.visit,
-                                                    alt: "Stock patient visit used as a design reference"
+                                                    alt: "AI illustration of a Pakistani father and son in a clinic waiting area"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
-                                                    columnNumber: 721
+                                                    lineNumber: 85,
+                                                    columnNumber: 752
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
                                                     children: [
@@ -1524,45 +1423,178 @@ function Home() {
                                                             children: "03"
                                                         }, void 0, false, {
                                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                                            lineNumber: 84,
-                                                            columnNumber: 814
+                                                            lineNumber: 85,
+                                                            columnNumber: 869
                                                         }, this),
                                                         " Time for your smile"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 84,
-                                                    columnNumber: 802
+                                                    lineNumber: 85,
+                                                    columnNumber: 857
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 84,
-                                            columnNumber: 713
+                                            lineNumber: 85,
+                                            columnNumber: 744
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 84,
+                                    lineNumber: 85,
                                     columnNumber: 370
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "disclaimer",
-                                    children: "Visual concept gallery. All images are stock photographs, not photographs of Family Dental Clinic or its patients. Replace with approved clinic photography."
+                                    children: "AI-generated imagery showing Pakistani dental care and family scenes. These are illustrative concepts, not photographs of the clinic, its staff, or patients."
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 84,
-                                    columnNumber: 877
+                                    lineNumber: 85,
+                                    columnNumber: 932
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 84,
+                            lineNumber: 85,
                             columnNumber: 44
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 84,
+                        lineNumber: 85,
+                        columnNumber: 7
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                        id: "faq",
+                        className: "section container faq-section",
+                        "data-reveal": true,
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "eyebrow",
+                                        children: "A little clarity"
+                                    }, void 0, false, {
+                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                        lineNumber: 86,
+                                        columnNumber: 84
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        children: [
+                                            "Questions?",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 86,
+                                                columnNumber: 141
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
+                                                children: "Let’s talk."
+                                            }, void 0, false, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 86,
+                                                columnNumber: 147
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                        lineNumber: 86,
+                                        columnNumber: 127
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: "Getting ready for your visit should feel simple. Here is where to start."
+                                    }, void 0, false, {
+                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                        lineNumber: 86,
+                                        columnNumber: 172
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: "button",
+                                        onClick: ()=>inquire(),
+                                        children: [
+                                            "Ask the clinic ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                name: "chat"
+                                            }, void 0, false, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 86,
+                                                columnNumber: 319
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                        lineNumber: 86,
+                                        columnNumber: 251
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/family-dental-demo/app/page.js",
+                                lineNumber: 86,
+                                columnNumber: 79
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "faq-list",
+                                children: [
+                                    [
+                                        'How do I arrange an appointment?',
+                                        'Call +92 320 3771995 to discuss a suitable date and time. Your appointment is confirmed directly by the clinic.'
+                                    ],
+                                    [
+                                        'Where is the clinic located?',
+                                        ADDRESS
+                                    ],
+                                    [
+                                        'Which treatments can I ask about?',
+                                        'Explore the treatment categories above, then contact the clinic to confirm which services are available and appropriate for you.'
+                                    ],
+                                    [
+                                        'What are the opening hours and treatment fees?',
+                                        'Please call the clinic for current opening hours, consultation fees, and a treatment estimate.'
+                                    ],
+                                    [
+                                        'What should I bring to my first visit?',
+                                        'Ask the clinic when arranging your visit whether you should bring previous dental records, X-rays, or other information.'
+                                    ]
+                                ].map(([q, a])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("details", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("summary", {
+                                                children: [
+                                                    q,
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        "aria-hidden": "true",
+                                                        children: "+"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                                        lineNumber: 92,
+                                                        columnNumber: 54
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 92,
+                                                columnNumber: 42
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                children: a
+                                            }, void 0, false, {
+                                                fileName: "[project]/family-dental-demo/app/page.js",
+                                                lineNumber: 92,
+                                                columnNumber: 97
+                                            }, this)
+                                        ]
+                                    }, q, true, {
+                                        fileName: "[project]/family-dental-demo/app/page.js",
+                                        lineNumber: 92,
+                                        columnNumber: 25
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/family-dental-demo/app/page.js",
+                                lineNumber: 86,
+                                columnNumber: 354
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/family-dental-demo/app/page.js",
+                        lineNumber: 86,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1577,12 +1609,12 @@ function Home() {
                                     "aria-hidden": "true",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {}, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 85,
+                                        lineNumber: 93,
                                         columnNumber: 181
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 122
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1590,7 +1622,7 @@ function Home() {
                                     children: "Let’s start with a conversation"
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 195
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1598,20 +1630,20 @@ function Home() {
                                         "Your Next Smile",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 272
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                             children: "Starts Here."
                                         }, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 278
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 253
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1619,14 +1651,14 @@ function Home() {
                                         "Have a question or ready to arrange a visit?",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 351
                                         }, this),
                                         "Contact the clinic and take the next step at your own pace."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 304
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1641,13 +1673,13 @@ function Home() {
                                                     name: "arrow"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 85,
+                                                    lineNumber: 93,
                                                     columnNumber: 546
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 457
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1658,20 +1690,20 @@ function Home() {
                                                     name: "phone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 85,
+                                                    lineNumber: 93,
                                                     columnNumber: 614
                                                 }, this),
                                                 " +92 320 3771995"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 576
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 420
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1682,25 +1714,25 @@ function Home() {
                                     children: "Find your way to the clinic ↗"
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 661
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
                                     children: "Demo inquiry only. Please call the clinic to arrange an actual appointment."
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 85,
+                                    lineNumber: 93,
                                     columnNumber: 769
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 85,
+                            lineNumber: 93,
                             columnNumber: 87
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 85,
+                        lineNumber: 93,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1715,7 +1747,7 @@ function Home() {
                                         children: "A familiar place, close to home"
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 94,
                                         columnNumber: 84
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1723,20 +1755,20 @@ function Home() {
                                             "Find us",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 153
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                                 children: "in Mirpur."
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 159
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 94,
                                         columnNumber: 142
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1744,13 +1776,13 @@ function Home() {
                                         children: "Your next conversation is just a call away."
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 94,
                                         columnNumber: 183
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 86,
+                                lineNumber: 94,
                                 columnNumber: 79
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1765,12 +1797,12 @@ function Home() {
                                                     name: "pin"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 86,
+                                                    lineNumber: 94,
                                                     columnNumber: 355
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 324
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1779,14 +1811,14 @@ function Home() {
                                                         children: "Family Dental Clinic Mirpur"
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 386
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("address", {
                                                         children: ADDRESS
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 422
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1800,25 +1832,25 @@ function Home() {
                                                                 children: "↗"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                                lineNumber: 86,
+                                                                lineNumber: 94,
                                                                 columnNumber: 534
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 450
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 381
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 94,
                                         columnNumber: 295
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1830,12 +1862,12 @@ function Home() {
                                                     name: "phone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                                    lineNumber: 86,
+                                                    lineNumber: 94,
                                                     columnNumber: 624
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 593
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1845,7 +1877,7 @@ function Home() {
                                                         children: "Call the clinic"
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 657
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1854,7 +1886,7 @@ function Home() {
                                                         children: "+92 320 3771995"
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 699
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1862,31 +1894,31 @@ function Home() {
                                                         children: "Please call to confirm opening hours and appointment arrangements."
                                                     }, void 0, false, {
                                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 759
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 94,
                                                 columnNumber: 652
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 86,
+                                        lineNumber: 94,
                                         columnNumber: 564
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 86,
+                                lineNumber: 94,
                                 columnNumber: 265
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 86,
+                        lineNumber: 94,
                         columnNumber: 7
                     }, this)
                 ]
@@ -1904,7 +1936,7 @@ function Home() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Brand, {}, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 57
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1912,20 +1944,20 @@ function Home() {
                                             "Thoughtful care.",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                                lineNumber: 88,
+                                                lineNumber: 96,
                                                 columnNumber: 85
                                             }, this),
                                             "For the smiles that matter most."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 66
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 52
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1934,7 +1966,7 @@ function Home() {
                                         children: "Explore"
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 138
                                     }, this),
                                     links.slice(1).map(([label, id])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1942,13 +1974,13 @@ function Home() {
                                             children: label
                                         }, id, false, {
                                             fileName: "[project]/family-dental-demo/app/page.js",
-                                            lineNumber: 88,
+                                            lineNumber: 96,
                                             columnNumber: 191
                                         }, this))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 133
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1958,14 +1990,14 @@ function Home() {
                                         children: "Come say hello"
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 270
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: ADDRESS
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 293
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1973,7 +2005,7 @@ function Home() {
                                         children: "+92 320 3771995"
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 309
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1983,19 +2015,19 @@ function Home() {
                                         children: "Google Maps directions ↗"
                                     }, void 0, false, {
                                         fileName: "[project]/family-dental-demo/app/page.js",
-                                        lineNumber: 88,
+                                        lineNumber: 96,
                                         columnNumber: 344
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 238
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 88,
+                        lineNumber: 96,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2009,14 +2041,14 @@ function Home() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 472
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "Independent website demo · Not an official clinic website"
                             }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 542
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2024,19 +2056,44 @@ function Home() {
                                 children: "Back to top ↑"
                             }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 612
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/family-dental-demo/app/page.js",
-                        lineNumber: 88,
+                        lineNumber: 96,
                         columnNumber: 431
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/family-dental-demo/app/page.js",
-                lineNumber: 88,
+                lineNumber: 96,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                className: "floating-call",
+                href: PHONE,
+                "aria-label": "Call Family Dental Clinic",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                        name: "phone"
+                    }, void 0, false, {
+                        fileName: "[project]/family-dental-demo/app/page.js",
+                        lineNumber: 97,
+                        columnNumber: 86
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Call the clinic"
+                    }, void 0, false, {
+                        fileName: "[project]/family-dental-demo/app/page.js",
+                        lineNumber: 97,
+                        columnNumber: 107
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/family-dental-demo/app/page.js",
+                lineNumber: 97,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dialog", {
@@ -2056,7 +2113,7 @@ function Home() {
                             children: "×"
                         }, void 0, false, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 207
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2065,12 +2122,12 @@ function Home() {
                                 name: "chat"
                             }, void 0, false, {
                                 fileName: "[project]/family-dental-demo/app/page.js",
-                                lineNumber: 89,
+                                lineNumber: 98,
                                 columnNumber: 362
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 329
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2078,7 +2135,7 @@ function Home() {
                             children: "A first step, at your pace"
                         }, void 0, false, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 389
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2087,20 +2144,20 @@ function Home() {
                                 "Let’s talk about",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 89,
+                                    lineNumber: 98,
                                     columnNumber: 481
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
                                     children: "your smile."
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 89,
+                                    lineNumber: 98,
                                     columnNumber: 487
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 442
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2111,20 +2168,20 @@ function Home() {
                                     children: topic
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 89,
+                                    lineNumber: 98,
                                     columnNumber: 554
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 512
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: "This is a demonstration inquiry. No request has been sent and no appointment has been booked. Please call Family Dental Clinic to ask about this treatment or arrange a visit."
                         }, void 0, false, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 582
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2135,14 +2192,14 @@ function Home() {
                                     name: "phone"
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 89,
+                                    lineNumber: 98,
                                     columnNumber: 798
                                 }, this),
                                 " Call +92 320 3771995"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 763
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$family$2d$dental$2d$demo$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2156,24 +2213,24 @@ function Home() {
                                     children: "↗"
                                 }, void 0, false, {
                                     fileName: "[project]/family-dental-demo/app/page.js",
-                                    lineNumber: 89,
+                                    lineNumber: 98,
                                     columnNumber: 936
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/family-dental-demo/app/page.js",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 844
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/family-dental-demo/app/page.js",
-                    lineNumber: 89,
+                    lineNumber: 98,
                     columnNumber: 175
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/family-dental-demo/app/page.js",
-                lineNumber: 89,
+                lineNumber: 98,
                 columnNumber: 5
             }, this)
         ]

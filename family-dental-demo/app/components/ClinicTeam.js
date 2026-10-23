@@ -4,7 +4,7 @@ import BookingAction from './BookingAction';
 import { clinic } from './clinic';
 
 // Original clinic promotion and separate portrait crops from the supplied Facebook post.
-const promotionImage = '/images/hm-free-consultation.jpg';
+const promotionImage = '/images/hm-free-consultation-hd.png';
 const doctors = [
   { name: 'Dr. Hamza Anwar Chaudhary', title: 'Dental Surgeon', initials: 'H', image: '/images/dr-hamza-portrait.png' },
   { name: 'Dr. Maham Raza', title: 'Lady Dental Surgeon', initials: 'MR', image: '/images/dr-maham-raza-portrait.png' },
@@ -13,7 +13,7 @@ const doctors = [
 export function ConsultationPromotion() {
   return <section id="promotion" className="container hm-promotion" aria-labelledby="promotion-title">
     <div className="hm-promotion-art">
-      <img src={promotionImage || '/images/hm-dental-logo.jpeg'} alt={promotionImage ? 'H&M Dental Care free consultation promotion with Dr. Hamza Anwar Chaudhary and Dr. Maham Raza' : 'H&M Dental Care logo'} width={1080} height={promotionImage ? 1424 : 1080} />
+      <img src={promotionImage || '/images/hm-dental-logo.jpeg'} alt={promotionImage ? 'H&M Dental Care free consultation promotion with Dr. Hamza Anwar Chaudhary and Dr. Maham Raza' : 'H&M Dental Care logo'} width={1086} height={1449} />
     </div>
     <div className="hm-promotion-copy">
       <p className="eyebrow">H&amp;M Dental Care · Special offer</p>

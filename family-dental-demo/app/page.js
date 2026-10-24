@@ -1,10 +1,11 @@
 'use client';
+import SiteFooter from './components/SiteFooter';
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import SiteHeader from './components/SiteHeader';
 import ContactTools from './components/ContactTools';
-import { services } from './components/services';
+import { practiceImageFor, services } from './components/services';
 import ClinicTeam, { ConsultationPromotion } from './components/ClinicTeam';
 import { clinic } from './components/clinic';
 import { requestBooking } from './components/BookingAction';
@@ -37,7 +38,7 @@ function Icon({ name = 'tooth', className = '' }) {
 }
 
 function Brand() {
-  return <a className="brand" href="#home" aria-label="H&M Dental Care home"><img className="brand-logo" src="/images/hm-dental-logo.jpeg" alt="" width="72" height="48" /><span>H&amp;M Dental Care</span></a>;
+  return <a className="brand" href="#home" aria-label="H&M Dental Care home"><img className="brand-logo" src="/images/hm-dental-logo.webp" alt="" width="72" height="48" /><span>H&amp;M Dental Care</span></a>;
 }
 
 function Photo({ src, alt, className = '', priority = false }) {
@@ -55,6 +56,9 @@ function HeroParticleNetwork() {
     const hero = canvas?.closest('.hero');
     if (!canvas || !context || !hero) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Keep a lighter network on phones; static rendering respects motion/data preferences.
+    const mobileNetwork = window.matchMedia('(pointer: coarse)').matches;
+    const saveData = navigator.connection?.saveData === true;
     let width = 0;
     let height = 0;
     let particles = [];
@@ -113,7 +117,8 @@ function HeroParticleNetwork() {
 
     function tick(time) {
       frame = 0;
-      if (disposed || !visible || document.hidden || reducedMotion.matches) return;
+      if (disposed || !visible || document.hidden || reducedMotion.matches || saveData) return;
+      if (lastTime && time - lastTime < 1000 / (mobileNetwork ? 20 : 30)) { frame = requestAnimationFrame(tick); return; }
       const delta = lastTime ? Math.min((time - lastTime) / 1000, .05) : 0;
       lastTime = time;
       draw(delta);
@@ -126,7 +131,7 @@ function HeroParticleNetwork() {
       lastTime = 0;
       if (disposed) return;
       draw();
-      if (visible && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(tick);
+      if (visible && !document.hidden && !reducedMotion.matches && !saveData) frame = requestAnimationFrame(tick);
     }
 
     function resize() {
@@ -136,12 +141,12 @@ function HeroParticleNetwork() {
       const previousHeight = height;
       width = rect.width;
       height = rect.height;
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(window.devicePixelRatio || 1, mobileNetwork ? 1 : 1.5);
       canvas.width = Math.round(width * ratio);
       canvas.height = Math.round(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
-      const minimumCount = width >= 600 && width <= 1100 ? 85 : 50;
-      const count = Math.min(175, Math.max(minimumCount, Math.round(width * height / 8500)));
+      const minimumCount = mobileNetwork ? 20 : 24;
+      const count = Math.min(mobileNetwork ? 28 : 45, Math.max(minimumCount, Math.round(width * height / 24000)));
       if (previousWidth && previousHeight) {
         for (const particle of particles) {
           particle.x *= width / previousWidth;
@@ -196,7 +201,7 @@ function HeroParticleNetwork() {
           expiresAt,
         });
       }
-      const overflow = particles.length - 350;
+      const overflow = particles.length - (mobileNetwork ? 32 : 60);
       if (overflow > 0) {
         let removed = 0;
         particles = particles.filter(particle => {
@@ -243,9 +248,9 @@ function TreatmentCard({ title, description, icon, onInquire }) {
     }
   }, [expanded]);
   const topics = Object.fromEntries(services.map(service => [service.title, service.items]));
-  return <article ref={card} className={`treatment flip-treatment${expanded ? ' is-expanded' : ''}`} onMouseEnter={() => setExpanded(true)} onMouseLeave={event => { if (!document.querySelector('.booking-dialog[open]') && !event.currentTarget.contains(document.activeElement)) setExpanded(false); }} onBlur={event => { if (!document.querySelector('.booking-dialog[open]') && !event.currentTarget.contains(event.relatedTarget)) setExpanded(false); }} onKeyDown={event => { if (event.key === 'Escape') { setExpanded(false); event.currentTarget.querySelector('.treatment-front')?.focus(); } }}>
+  return <article ref={card} className={`treatment flip-treatment${expanded ? ' is-expanded' : ''}`} onPointerEnter={event => { if (event.pointerType === 'mouse') setExpanded(true); }} onPointerLeave={event => { if (event.pointerType === 'mouse' && !document.querySelector('.booking-dialog[open]') && !event.currentTarget.contains(document.activeElement)) setExpanded(false); }} onBlur={event => { if (!document.querySelector('.booking-dialog[open]') && !event.currentTarget.contains(event.relatedTarget)) setExpanded(false); }} onKeyDown={event => { if (event.key === 'Escape') { setExpanded(false); event.currentTarget.querySelector('.treatment-front')?.focus(); } }}>
     <button type="button" className="treatment-front" tabIndex={expanded ? -1 : 0} aria-hidden={expanded || undefined} aria-expanded={expanded} aria-label={`Explore ${title}`} onClick={() => setExpanded(!expanded)}>
-      <span className="service-art"><Icon name={icon} /><span className="service-art-accent"><Icon name="spark" /></span></span>
+      <Image sizes="(max-width: 380px) 90vw, (max-width: 900px) 45vw, 380px" className="service-card-image" src={practiceImageFor(services.find(service => service.title === title) || {})} alt={`Dental care scene for ${title}`} width={800} height={600} loading="lazy" decoding="async" />
       <span className="service-title">{title}</span>
       <span className="service-hint">Explore treatment <Icon name="arrow" /></span>
     </button>
@@ -286,7 +291,7 @@ function CareShowcase() {
     <div className="showcase-heading"><div><p className="eyebrow"><span className="mini-line" /> A different kind of dental experience</p><h2 id="showcase-title">There’s a person<br />behind <em>every smile.</em></h2></div><p>Find your starting point.<br />We’ll help you start the conversation.</p></div>
     <div className="showcase-tabs" role="group" aria-label="Explore your dental visit">{options.map((option, index) => <button key={option.label} type="button" aria-pressed={selected === index} className={selected === index ? 'selected' : ''} onClick={() => setSelected(index)}><Icon name={option.icon} /><span>{option.label}</span><span className="tab-number">0{index + 1}</span></button>)}</div>
     <div className="showcase-stage" key={selected}>
-      <div className="showcase-photo"><Photo src={current.image} alt={`AI-generated Pakistani dental care scene: ${current.label}`} /><span className="showcase-photo-label"><span /> MADE FOR MOMENTS LIKE THESE</span><span className="showcase-photo-number">0{selected + 1}</span></div>
+      <div className="showcase-photo"><Photo src={current.image} alt={`Dental care illustration: ${current.label}`} /><span className="showcase-photo-label"><span /> MADE FOR MOMENTS LIKE THESE</span><span className="showcase-photo-number">0{selected + 1}</span></div>
       <div className="showcase-copy"><span className="showcase-symbol"><Icon name={current.icon} /></span><p className="eyebrow">{current.tag}</p><h3>{current.title}<br /><em>{current.accent}</em></h3><p>{current.text}</p><div className="showcase-steps">{current.steps.map((step, index) => <div key={step}><span>0{index + 1}</span>{step}</div>)}</div><a className="button" href={PHONE}>Let’s talk about your visit <Icon name="arrow" /></a><small>Treatment availability and suitability are confirmed by the clinic.</small></div>
     </div>
   </section>;
@@ -317,23 +322,28 @@ export default function Home() {
             <p className="eyebrow">H&M Dental Care · Kharian</p>
             <h1>A little care.<br /><em>A brighter smile.</em></h1>
             <div className="hero-care-columns"><div><span className="hero-care-icon"><Icon name="heart" /></span><h2>For your family</h2><p>A welcoming first step for every generation. Share your questions and plan your next dental visit.</p></div><div><span className="hero-care-icon"><Icon name="chat" /></span><h2>Care starts here</h2><p>Talk about your smile, explore available treatment options, and understand what comes next.</p></div></div>
-            <button className="button" onClick={event => inquire('', event.currentTarget)}>Book an Appointment <Icon name="arrow" /></button>
+            <div className="hero-primary-actions"><button className="button" onClick={event => inquire('', event.currentTarget)}>Book an Appointment <Icon name="arrow" /></button><a className="hero-services-link" href="#treatments">Explore our services <span aria-hidden="true">↗</span></a></div>
             <div className="hero-smile-badge"><strong>Smile</strong><span>A little brighter.</span></div>
           </div>
           <div className="hero-visit-strip"><span className="hero-strip-icon"><Icon name="tooth" /></span><p><span>LET’S PLAN YOUR VISIT</span> Your next smile starts with a conversation.</p><a href={PHONE}><Icon name="phone" /> {clinic.phone} <Icon name="arrow" /></a></div>
         </div>
       </section>
       <div className="smile-ribbon" aria-hidden="true"><div>{[0, 1, 2, 3].map(item => <span key={item}>YOUR SMILE, OUR STARTING POINT <span className="ribbon-star">✳</span> CARE FOR EVERY GENERATION <span className="ribbon-star">✳</span> KHARIAN <span className="ribbon-star">✳</span></span>)}</div></div>
+      <nav className="container visit-shortcuts" aria-label="Find what you need">
+        <a href="#promotion"><span className="shortcut-icon"><Icon name="chat" /></span><span><strong>Free consultation</strong><small>Start with a conversation</small></span><span aria-hidden="true">↗</span></a>
+        <a href="#doctors"><span className="shortcut-icon"><Icon name="heart" /></span><span><strong>Meet your dentists</strong><small>Get to know your care team</small></span><span aria-hidden="true">↗</span></a>
+        <a href="#contact"><span className="shortcut-icon"><Icon name="pin" /></span><span><strong>Visit our clinic</strong><small>Find us in Kharian</small></span><span aria-hidden="true">↗</span></a>
+      </nav>
       <ConsultationPromotion />
       <ClinicTeam />
       <CareShowcase />
       <section className="trust-band" aria-label="Our care concept"><div className="container trust-grid">{[['heart', 'For the whole family', 'Every age. Every kind of smile.'], ['spark', 'A welcoming setting', 'A fresh, thoughtful care concept.'], ['chat', 'Clarity at every step', 'Questions deserve clear answers.'], ['leaf', 'Your comfort matters', 'A little reassurance goes a long way.']].map(([icon, title, text]) => <div className="trust-item" key={title}><Icon name={icon} /><div><h3>{title}</h3><p>{text}</p></div></div>)}</div></section>
       <section id="treatments" className="section container" data-reveal><div className="section-heading"><div><p className="eyebrow">Our services</p><h2>A wide range of<br /><em>dental care.</em></h2></div><div className="section-aside"><p>From everyday questions to your next steps, explore a more considered approach to dental care.</p><p className="disclaimer">Contact the clinic to discuss treatment suitability and appointment availability.</p></div></div><div className="treatment-grid">{treatments.slice(0, 6).map(([title, description, icon]) => <TreatmentCard key={title} title={title} description={description} icon={icon} onInquire={inquire} />)}</div><div className="home-services-more"><a className="button" href="/services">View more services <Icon name="arrow" /></a></div></section>
-      <section id="about" className="about-section"><div className="container about-grid" data-reveal><div className="about-art"><Photo src={photos.room} alt="AI illustration of a Pakistani dentist welcoming a mother and daughter" className="about-photo" /><div className="about-stamp"><Icon name="tooth" /><span>Thoughtful care.<br /><em>Human connection.</em></span></div><p className="image-caption">AI-GENERATED CLINIC CONCEPT</p></div><div className="about-copy"><p className="eyebrow">The heart of the experience</p><h2>A familiar place.<br /><em>A friendly welcome.</em></h2><p className="large-copy">A dental visit should begin with a conversation, not a feeling of uncertainty.</p><p>Explore dental care for your family in Kharian. Contact the clinic to discuss your concerns, ask about treatment options, and plan your next visit.</p><div className="about-points"><span><Icon name="heart" /> A thoughtful welcome for adults and children</span><span><Icon name="chat" /> Clear conversations about your dental needs</span></div><a className="text-link" href="#patient-care">Discover the patient experience <span>↗</span></a></div></div></section>
+      <section id="about" className="about-section"><div className="container about-grid" data-reveal><div className="about-art"><Photo src={photos.room} alt="Illustration of a Pakistani dentist welcoming a mother and daughter" className="about-photo" /><div className="about-stamp"><Icon name="tooth" /><span>Thoughtful care.<br /><em>Human connection.</em></span></div></div><div className="about-copy"><p className="eyebrow">The heart of the experience</p><h2>A familiar place.<br /><em>A friendly welcome.</em></h2><p className="large-copy">A dental visit should begin with a conversation, not a feeling of uncertainty.</p><p>Explore dental care for your family in Kharian. Contact the clinic to discuss your concerns, ask about treatment options, and plan your next visit.</p><div className="about-points"><span><Icon name="heart" /> A thoughtful welcome for adults and children</span><span><Icon name="chat" /> Clear conversations about your dental needs</span></div><a className="text-link" href="#patient-care">Discover the patient experience <span>↗</span></a></div></div></section>
       <section id="patient-care" className="patient-journey">
         <div className="container patient-journey-grid">
           <div className="patient-journey-copy" data-reveal><p className="eyebrow section-pill">Your care, step by step</p><h2>Let’s take care of<br /><em>your dental concerns.</em></h2><ol className="journey-list"><li><span>01</span><p>Explore the dental care categories and choose what you’d like to discuss.</p></li><li><span>02</span><p>Call the clinic to ask your questions and arrange a suitable appointment.</p></li><li><span>03</span><p>Meet your dentist, discuss an assessment, and understand your next steps.</p></li></ol><button className="button journey-cta" onClick={event => inquire('', event.currentTarget)}>Arrange your visit <Icon name="arrow" /></button></div>
-          <div className="patient-journey-art" data-reveal><span className="journey-ring journey-ring-one" aria-hidden="true" /><span className="journey-ring journey-ring-two" aria-hidden="true" /><Photo src={photos.care} alt="AI-generated scene of a Pakistani dentist discussing care with a patient" className="journey-portrait" /><div className="journey-photo-note"><Icon name="heart" /><span>Good conversations.<br /><strong>Confident next steps.</strong></span></div><small>AI-generated concept imagery</small></div>
+          <div className="patient-journey-art" data-reveal><span className="journey-ring journey-ring-one" aria-hidden="true" /><span className="journey-ring journey-ring-two" aria-hidden="true" /><Photo src={photos.care} alt="Illustration of a Pakistani dentist discussing care with a patient" className="journey-portrait" /><div className="journey-photo-note"><Icon name="heart" /><span>Good conversations.<br /><strong>Confident next steps.</strong></span></div></div>
         </div>
       </section>
       <section className="care-sequence" aria-labelledby="sequence-heading"><div className="container">
@@ -345,7 +355,7 @@ export default function Home() {
         ].map(([title, text, topic], index) => <article className="sequence-card" key={title} data-reveal><div className="sequence-number-row"><span className="sequence-number"><span>0{index + 1}</span></span><span className="sequence-connector" aria-hidden="true" /></div><h3>{title}</h3><p>{text}</p><button className="sequence-read-more" onClick={event => inquire(topic, event.currentTarget)}>Read more <span><Icon name="arrow" /></span></button></article>)}</div>
         <SmileComparison />
       </div></section>
-      {/* <section className="gallery-section"><div className="container" data-reveal><div className="section-heading"><div><p className="eyebrow">A glimpse of the feeling</p><h2>More comfort.<br /><em>More reasons to smile.</em></h2></div><p className="section-aside">Light-filled spaces. Attentive conversations. A visual direction built around feeling welcome.</p></div><div className="gallery"><figure><Photo src={photos.room} alt="AI illustration of a Pakistani family arriving at a dental clinic" /><figcaption><span>01</span> A welcoming space</figcaption></figure><figure><Photo src={photos.care} alt="AI illustration of a Pakistani dentist explaining a dental model" /><figcaption><span>02</span> Care in the details</figcaption></figure><figure><Photo src={photos.visit} alt="AI illustration of a Pakistani father and son in a clinic waiting area" /><figcaption><span>03</span> Time for your smile</figcaption></figure></div><p className="disclaimer">AI-generated imagery showing Pakistani dental care and family scenes. These are illustrative concepts, not photographs of the clinic, its staff, or patients.</p></div></section> */}
+      {/* <section className="gallery-section"><div className="container" data-reveal><div className="section-heading"><div><p className="eyebrow">A glimpse of the feeling</p><h2>More comfort.<br /><em>More reasons to smile.</em></h2></div><p className="section-aside">Light-filled spaces. Attentive conversations. A visual direction built around feeling welcome.</p></div><div className="gallery"><figure><Photo src={photos.room} alt="Illustration of a Pakistani family arriving at a dental clinic" /><figcaption><span>01</span> A welcoming space</figcaption></figure><figure><Photo src={photos.care} alt="Illustration of a Pakistani dentist explaining a dental model" /><figcaption><span>02</span> Care in the details</figcaption></figure><figure><Photo src={photos.visit} alt="Illustration of a Pakistani father and son in a clinic waiting area" /><figcaption><span>03</span> Time for your smile</figcaption></figure></div></div></section> */}
       <section id="faq" className="section container faq-section" data-reveal><div><p className="eyebrow">A little clarity</p><h2>Questions?<br /><em>Let’s talk.</em></h2><p>Getting ready for your visit should feel simple. Here is where to start.</p><button className="button" onClick={event => inquire('', event.currentTarget)}>Ask the clinic <Icon name="chat" /></button></div><div className="faq-list">{[
         ['How do I arrange an appointment?', `Call ${clinic.phone} to discuss a suitable date and time. Your appointment is confirmed directly by the clinic.`],
         ['Where is the clinic located?', ADDRESS],
@@ -354,13 +364,13 @@ export default function Home() {
         ['What should I bring to my first visit?', 'Ask the clinic when arranging your visit whether you should bring previous dental records, X-rays, or other information.']
       ].map(([q, a]) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div></section>
       <section className="container appointment-section" id="appointment" data-reveal><div className="appointment-panel"><div className="appointment-decoration" aria-hidden="true"><Icon /></div><p className="eyebrow">Let’s start with a conversation</p><h2>Your Next Smile<br /><em>Starts Here.</em></h2><p>Have a question or ready to arrange a visit?<br />Contact the clinic and take the next step at your own pace.</p><div className="appointment-actions"><button className="button button-light" onClick={event => inquire('', event.currentTarget)}>Request an Appointment <Icon name="arrow" /></button><a className="call-link" href={PHONE}><Icon name="phone" /> {clinic.phone}</a></div><a className="directions-link" href={MAP} target="_blank" rel="noreferrer">Find your way to the clinic ↗</a><small>Send your request in WhatsApp. The clinic must confirm your appointment.</small></div></section>
-      <section id="contact" className="container contact-section" data-reveal><div><p className="eyebrow">A familiar place, close to home</p><h2>Find us<br /><em>in Kharian.</em></h2><p className="contact-intro">Your next conversation is just a call away.</p></div><div className="contact-card"><div className="contact-row"><span className="contact-icon"><Icon name="pin" /></span><div><h3>H&M Dental Care</h3><address>{ADDRESS}</address><ContactTools /><a className="text-link" href={MAP} target="_blank" rel="noreferrer">Get Directions <span>↗</span></a></div></div><div className="contact-row"><span className="contact-icon"><Icon name="phone" /></span><div><p className="eyebrow">Call the clinic</p><a className="phone-number" href={PHONE}>{clinic.phone}</a><p className="disclaimer">Please call to confirm opening hours and appointment arrangements.</p></div></div></div></section>
+      <section id="contact" className="container contact-section" data-reveal><div className="contact-heading"><p className="eyebrow">A familiar place, close to home</p><h2>Find us<br /><em>in Kharian.</em></h2><p className="contact-intro">Everything you need to plan your visit or speak with the clinic.</p></div><div className="contact-card"><div className="contact-row contact-visit"><span className="contact-icon"><Icon name="pin" /></span><div className="contact-content"><p className="eyebrow">Visit the clinic</p><h3>H&amp;M Dental Care</h3><address>{ADDRESS}</address><ContactTools /><a className="contact-directions" href={MAP} target="_blank" rel="noreferrer">Get directions <Icon name="arrow" /></a></div></div><div className="contact-row contact-call"><span className="contact-icon"><Icon name="phone" /></span><div className="contact-content"><p className="eyebrow">Prefer to call?</p><a className="phone-number" href={PHONE}>{clinic.phone}</a><p className="disclaimer">Call to confirm opening hours, appointment availability, and anything you would like to ask before visiting.</p><a className="contact-call-action" href={PHONE}>Call the clinic <Icon name="phone" /></a></div></div></div></section>
       <section className="clinic-map-section container" aria-labelledby="clinic-map-title">
-        <div className="map-heading"><div><p className="eyebrow">Come say hello</p><h2 id="clinic-map-title">Your next smile.<br /><em>A little closer to home.</em></h2></div><a className="button" href={MAP} target="_blank" rel="noreferrer"><Icon name="pin" /> Get directions <Icon name="arrow" /></a></div>
-        <div className="clinic-map-frame"><iframe title="Google Map — H&M Dental Care, Kharian Dinga Road, Kharian, Pakistan" src={`https://www.google.com/maps?q=${encodeURIComponent(clinic.mapQuery)}&output=embed`} width="100%" height="460" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div className="map-address-card"><span className="map-pin"><Icon name="pin" /></span><div><strong>H&M Dental Care</strong><p>{ADDRESS}</p><a href={MAP} target="_blank" rel="noreferrer">Open in Google Maps ↗</a></div></div></div>
+        <div className="map-heading"><div className="map-heading-copy"><p className="eyebrow">Come say hello</p><h2 id="clinic-map-title">Your next smile.<br /><em>A little closer to home.</em></h2><p>Find H&amp;M Dental Care on Kharian Dinga Road and open your preferred map app for turn-by-turn directions.</p></div><a className="button map-directions-button" href={MAP} target="_blank" rel="noreferrer"><Icon name="pin" /> Open directions <Icon name="arrow" /></a></div>
+        <div className="clinic-map-frame"><iframe className="map-embed" title="Google Map — H&M Dental Care, Kharian Dinga Road, Kharian, Pakistan" src={`https://www.google.com/maps?q=${encodeURIComponent(clinic.mapQuery)}&output=embed`} width="100%" height="460" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div className="map-address-card"><span className="map-pin"><Icon name="pin" /></span><div><span className="map-card-label">H&amp;M Dental Care</span><strong>Visit us in Kharian</strong><p>{ADDRESS}</p></div><a href={MAP} target="_blank" rel="noreferrer">Google Maps <span aria-hidden="true">↗</span></a></div></div>
       </section>
     </main>
-    <footer><div className="container footer-main"><div><Brand /><p>Thoughtful care.<br />For the smiles that matter most.</p></div><div><h3>Explore</h3>{links.slice(1).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div><div className="footer-contact"><h3>Come say hello</h3><p>{ADDRESS}</p><a href={PHONE}>{clinic.phone}</a><a href={MAP} target="_blank" rel="noreferrer">Google Maps directions ↗</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} H&M Dental Care.</span><span></span><a href="#home">Back to top ↑</a></div></footer>
+    <SiteFooter />
     <a className="floating-call" href={PHONE} aria-label="Call H&M Dental Care"><Icon name="phone" /><span>Call the clinic</span></a>
   </>;
 }

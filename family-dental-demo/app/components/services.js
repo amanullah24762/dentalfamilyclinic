@@ -10,7 +10,8 @@ export const services = [
       "Discuss your concerns",
       "Review your dental history",
       "Plan your next steps"
-    ]
+    ],
+    "image": "/images/services/dentist-consultation.webp"
   },
   {
     "slug": "teeth-cleaning",
@@ -22,7 +23,8 @@ export const services = [
       "Discuss cleaning needs",
       "Arrange a cleaning visit",
       "Ask about oral hygiene"
-    ]
+    ],
+    "image": "/images/services/teeth-cleaning.webp"
   },
   {
     "slug": "tooth-fillings",
@@ -34,7 +36,8 @@ export const services = [
       "Arrange a tooth assessment",
       "Discuss filling options",
       "Ask about treatment costs"
-    ]
+    ],
+    "image": "/images/services/tooth-fillings.webp"
   },
   {
     "slug": "tooth-extractions",
@@ -46,7 +49,8 @@ export const services = [
       "Assess the affected tooth",
       "Discuss the procedure",
       "Ask about aftercare"
-    ]
+    ],
+    "image": "/images/services/tooth-extractions.webp"
   },
   {
     "slug": "crowns-bridges",
@@ -58,7 +62,8 @@ export const services = [
       "Discuss a damaged tooth",
       "Ask about crown options",
       "Plan your appointments"
-    ]
+    ],
+    "image": "/images/services/crowns-bridges.webp"
   },
   {
     "slug": "root-canals",
@@ -70,7 +75,8 @@ export const services = [
       "Assess the affected tooth",
       "Discuss the treatment plan",
       "Arrange follow-up care"
-    ]
+    ],
+    "image": "/images/services/root-canals.webp"
   },
   {
     "slug": "teeth-whitening",
@@ -82,7 +88,8 @@ export const services = [
       "Discuss your smile goals",
       "Review whitening suitability",
       "Ask about aftercare"
-    ]
+    ],
+    "image": "/images/services/teeth-whitening.webp"
   },
   {
     "slug": "bleeding-gums",
@@ -94,7 +101,8 @@ export const services = [
       "Share your gum concerns",
       "Arrange a gum assessment",
       "Discuss ongoing care"
-    ]
+    ],
+    "image": "/images/services/bleeding-gums.webp"
   },
   {
     "slug": "bad-breath",
@@ -106,7 +114,8 @@ export const services = [
       "Discuss your concerns",
       "Arrange an oral examination",
       "Ask about care options"
-    ]
+    ],
+    "image": "/images/services/bad-breath.webp"
   },
   {
     "slug": "tooth-gap-closure",
@@ -118,7 +127,8 @@ export const services = [
       "Discuss gaps in your teeth",
       "Explore suitable options",
       "Request a treatment plan"
-    ]
+    ],
+    "image": "/images/services/tooth-gap-closure.webp"
   },
   {
     "slug": "orthodontics",
@@ -130,7 +140,8 @@ export const services = [
       "Discuss tooth alignment",
       "Ask about suitable options",
       "Plan your treatment visits"
-    ]
+    ],
+    "image": "/images/services/orthodontics.webp"
   },
   {
     "slug": "jaw-fracture-treatment",
@@ -142,7 +153,8 @@ export const services = [
       "Discuss the injury",
       "Arrange an assessment",
       "Confirm treatment arrangements"
-    ]
+    ],
+    "image": "/images/services/jaw-fracture-treatment.webp"
   },
   {
     "slug": "laser-filling",
@@ -154,7 +166,8 @@ export const services = [
       "Ask about the procedure",
       "Discuss suitability",
       "Confirm treatment details"
-    ]
+    ],
+    "image": "/images/services/laser-filling.webp"
   },
   {
     "slug": "dental-x-rays",
@@ -166,6 +179,29 @@ export const services = [
       "Discuss imaging needs",
       "Arrange your visit",
       "Review findings with your dentist"
-    ]
+    ],
+    "image": "/images/services/dental-x-rays.webp"
   }
 ];
+
+// Treatment-scene assets shared by related services.
+const practiceScenes = {
+  'dentist-consultation': 'examination',
+  'teeth-cleaning': 'cleaning',
+  'tooth-fillings': 'restoration',
+  'tooth-extractions': 'extraction',
+  'crowns-bridges': 'restoration',
+  'root-canals': 'root-canal',
+  'teeth-whitening': 'whitening',
+  'bleeding-gums': 'cleaning',
+  'bad-breath': 'examination',
+  'tooth-gap-closure': 'orthodontics',
+  'orthodontics': 'orthodontics',
+  'jaw-fracture-treatment': 'imaging',
+  'laser-filling': 'restoration',
+  'dental-x-rays': 'imaging',
+};
+
+export function practiceImageFor(service) {
+  return `/images/practice/${practiceScenes[service.slug] || 'examination'}.webp`;
+}
